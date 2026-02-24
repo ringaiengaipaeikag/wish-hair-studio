@@ -1,0 +1,2004 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish Hair Studio — Наращивание и продажа волос в Сочи</title>
+    <meta name="description" content="Wish Hair Studio — студия наращивания и продажи волос в Сочи. Горячее капсульное наращивание, коррекция, ботокс для волос, нанопластика, свадебные причёски. Запись по телефону +7 (928) 667-00-68.">
+    <meta name="keywords" content="наращивание волос Сочи, продажа волос Сочи, капсульное наращивание, коррекция наращивания, ботокс для волос, нанопластика, свадебные причёски Сочи, Wish Hair Studio">
+    <meta name="author" content="Wish Hair Studio">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Wish Hair Studio — Наращивание и продажа волос в Сочи">
+    <meta property="og:description" content="Студия наращивания и продажи волос в Сочи. Горячее капсульное наращивание, коррекция, уходовые процедуры, свадебные причёски. Рейтинг 5.0 на 2ГИС.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://wish-hair-studio.ru">
+    <meta property="og:site_name" content="Wish Hair Studio">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#E8A0B4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Wish Hair">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ===== CSS RESET & BASE ===== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pink-light: #F5C6D0;
+            --pink: #E8A0B4;
+            --pink-deep: #D4849E;
+            --rose: #C47290;
+            --gold: #D4AF37;
+            --gold-light: #E8CC6E;
+            --dark: #2D2D2D;
+            --dark-soft: #4A4A4A;
+            --gray: #8A8A8A;
+            --gray-light: #F0F0F0;
+            --white: #FFFFFF;
+            --bg-cream: #FFF9FA;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius: 16px;
+            --radius-sm: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Staggered delays */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+
+        /* ===== SECTION COMMON ===== */
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--dark);
+            margin-bottom: 16px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--pink), var(--gold));
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            margin-top: 20px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--pink), var(--rose));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(232, 160, 180, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(232, 160, 180, 0.55);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 18px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            padding: 12px 0;
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .navbar.scrolled .nav-logo {
+            color: var(--dark);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .navbar.scrolled .nav-links a {
+            color: var(--dark-soft);
+        }
+
+        .navbar.scrolled .nav-links a:hover {
+            color: var(--pink);
+        }
+
+        .nav-cta {
+            padding: 10px 24px !important;
+            font-size: 0.82rem !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--white);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        .navbar.scrolled .hamburger span {
+            background: var(--dark);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-menu a {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--pink);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #3a1c2e 0%, #2D2D2D 40%, #1a1a2e 100%);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(232, 160, 180, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+                radial-gradient(ellipse at 50% 100%, rgba(245, 198, 208, 0.12) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(45, 45, 45, 0.3) 0%, rgba(45, 45, 45, 0.1) 50%, rgba(45, 45, 45, 0.5) 100%);
+            z-index: 2;
+        }
+
+        /* Decorative floating elements */
+        .hero-decor {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-decor-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(245, 198, 208, 0.08) 0%, transparent 70%);
+            top: 10%;
+            left: -5%;
+            animation-delay: 0s;
+        }
+
+        .hero-decor-2 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+            top: 20%;
+            right: 5%;
+            animation-delay: 2s;
+        }
+
+        .hero-decor-3 {
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(232, 160, 180, 0.07) 0%, transparent 70%);
+            bottom: 15%;
+            right: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0); }
+            50% { transform: translate(15px, -20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            padding: 0 24px;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            color: var(--gold-light);
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge i {
+            font-size: 0.7rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            color: var(--white);
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--pink-light), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.75);
+            font-weight: 300;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold-light);
+            font-size: 0.9rem;
+            margin-bottom: 36px;
+        }
+
+        .hero-rating .stars {
+            display: flex;
+            gap: 3px;
+        }
+
+        .hero-rating .stars i {
+            font-size: 0.85rem;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll .line {
+            width: 1px;
+            height: 30px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ===== SERVICES ===== */
+        .services {
+            background: var(--bg-cream);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-category {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--pink), var(--gold));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-category:hover::before {
+            opacity: 1;
+        }
+
+        .service-category-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+        }
+
+        .service-category:nth-child(1) .service-category-icon {
+            background: linear-gradient(135deg, rgba(245, 198, 208, 0.3), rgba(232, 160, 180, 0.3));
+            color: var(--rose);
+        }
+
+        .service-category:nth-child(2) .service-category-icon {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(232, 204, 110, 0.2));
+            color: var(--gold);
+        }
+
+        .service-category:nth-child(3) .service-category-icon {
+            background: linear-gradient(135deg, rgba(196, 114, 144, 0.2), rgba(212, 132, 158, 0.2));
+            color: var(--pink-deep);
+        }
+
+        .service-category h3 {
+            font-size: 1.25rem;
+            margin-bottom: 18px;
+            color: var(--dark);
+        }
+
+        .service-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+            font-size: 0.93rem;
+            color: var(--dark-soft);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-list li i {
+            color: var(--pink);
+            font-size: 0.6rem;
+            flex-shrink: 0;
+        }
+
+        /* ===== MASTERS ===== */
+        .masters {
+            background: var(--white);
+        }
+
+        .masters-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .master-card {
+            text-align: center;
+            padding: 50px 30px 40px;
+            background: var(--bg-cream);
+            border-radius: var(--radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .master-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .master-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--white);
+            position: relative;
+        }
+
+        .master-card:nth-child(1) .master-avatar {
+            background: linear-gradient(135deg, var(--pink), var(--rose));
+            box-shadow: 0 8px 25px rgba(232, 160, 180, 0.35);
+        }
+
+        .master-card:nth-child(2) .master-avatar {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .master-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px dashed rgba(212, 175, 55, 0.3);
+        }
+
+        .master-name {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .master-role {
+            font-size: 0.9rem;
+            color: var(--gray);
+            font-weight: 400;
+            line-height: 1.5;
+        }
+
+        .master-badge {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 16px;
+            background: linear-gradient(135deg, rgba(245, 198, 208, 0.3), rgba(232, 160, 180, 0.2));
+            border-radius: 50px;
+            font-size: 0.78rem;
+            color: var(--rose);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            background: var(--bg-cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 3/4;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(45, 45, 45, 0.4) 0%, transparent 50%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item .gallery-zoom {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 1rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-zoom {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Lightbox */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 90vh;
+            border-radius: var(--radius-sm);
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2001;
+            transition: var(--transition);
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-close:hover {
+            color: var(--pink-light);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 2001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            transition: var(--transition);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        /* ===== TRAINING ===== */
+        .training {
+            background: linear-gradient(135deg, #2D2D2D 0%, #1a1a2e 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .training::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(232, 160, 180, 0.06) 0%, transparent 60%);
+        }
+
+        .training .section-header h2 {
+            color: var(--white);
+        }
+
+        .training .section-header p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .training-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 50px;
+        }
+
+        .training-card {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            text-align: center;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .training-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .training-card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(232, 204, 110, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            font-size: 1.6rem;
+            color: var(--gold-light);
+        }
+
+        .training-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .training-card p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+        }
+
+        .training-cta {
+            text-align: center;
+        }
+
+        /* ===== REVIEWS ===== */
+        .reviews {
+            background: var(--white);
+        }
+
+        .reviews-highlight {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .reviews-rating-big {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .reviews-stars {
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .reviews-stars i {
+            color: var(--gold);
+            font-size: 1.3rem;
+        }
+
+        .reviews-meta {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .reviews-meta a {
+            color: var(--pink);
+            font-weight: 600;
+            border-bottom: 1px dashed var(--pink);
+        }
+
+        .reviews-meta a:hover {
+            color: var(--rose);
+        }
+
+        .reviews-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background: var(--bg-cream);
+            border-radius: var(--radius);
+            padding: 30px;
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '\201C';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--pink-light);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+
+        .review-card-stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 14px;
+        }
+
+        .review-card-stars i {
+            color: var(--gold);
+            font-size: 0.85rem;
+        }
+
+        .review-card p {
+            font-size: 0.92rem;
+            color: var(--dark-soft);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .review-card-author {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: var(--dark);
+        }
+
+        .reviews-link {
+            text-align: center;
+        }
+
+        /* ===== CONTACTS ===== */
+        .contacts {
+            background: var(--bg-cream);
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contacts-info {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--pink-light), var(--pink));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-text h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .contact-item-text p,
+        .contact-item-text a {
+            font-size: 0.98rem;
+            color: var(--dark);
+            line-height: 1.5;
+        }
+
+        .contact-item-text a:hover {
+            color: var(--pink);
+        }
+
+        .contacts-social {
+            display: flex;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: var(--white);
+        }
+
+        .social-link.telegram {
+            background: #26A5E4;
+            color: var(--white);
+        }
+
+        .social-link.vk {
+            background: #0077FF;
+            color: var(--white);
+        }
+
+        .social-link.twogis {
+            background: #2D9B3A;
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .social-link.yandex {
+            background: #FC3F1D;
+            color: var(--white);
+            font-size: 0.7rem;
+            font-weight: 700;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contacts-amenities {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .amenity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--dark-soft);
+            background: var(--white);
+            padding: 8px 16px;
+            border-radius: 50px;
+        }
+
+        .amenity i {
+            color: var(--pink);
+        }
+
+        .contacts-map {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            min-height: 400px;
+        }
+
+        .contacts-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: 0;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 50px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--pink);
+            border-color: var(--pink);
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-copy {
+            font-size: 0.85rem;
+        }
+
+        .footer-cta .btn {
+            padding: 12px 28px;
+            font-size: 0.85rem;
+        }
+
+        /* ===== WHATSAPP FLOAT ===== */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 900;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.7rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            animation: pulse-wa 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.55);
+        }
+
+        @keyframes pulse-wa {
+            0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            .training-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 50px;
+            }
+
+            .reviews-cards {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 40px;
+            }
+
+            .contacts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 70px 0;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .masters-grid {
+                grid-template-columns: 1fr;
+                max-width: 380px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .contacts-map {
+                min-height: 300px;
+            }
+
+            .contacts-map iframe {
+                min-height: 300px;
+            }
+
+            .footer-content,
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .lightbox-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-header {
+                margin-bottom: 40px;
+            }
+
+            .service-category {
+                padding: 30px 22px;
+            }
+
+            .contacts-amenities {
+                flex-direction: column;
+            }
+
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 54px;
+                height: 54px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#hero" class="nav-logo">Wish <span>Hair</span></a>
+            <ul class="nav-links">
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#masters">Мастера</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#training">Обучение</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="https://wa.me/79286670068" target="_blank" class="btn btn-primary nav-cta">Записаться</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger" aria-label="Открыть меню" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#services" class="mobile-link">Услуги</a>
+        <a href="#masters" class="mobile-link">Мастера</a>
+        <a href="#gallery" class="mobile-link">Галерея</a>
+        <a href="#training" class="mobile-link">Обучение</a>
+        <a href="#reviews" class="mobile-link">Отзывы</a>
+        <a href="#contacts" class="mobile-link">Контакты</a>
+        <a href="https://wa.me/79286670068" target="_blank" class="btn btn-primary" style="margin-top: 10px;">Записаться</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-decor hero-decor-1"></div>
+            <div class="hero-decor hero-decor-2"></div>
+            <div class="hero-decor hero-decor-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge fade-in">
+                <i class="fas fa-gem"></i>
+                Премиум студия в Сочи
+            </div>
+            <h1 class="fade-in delay-1">Wish <span>Hair Studio</span></h1>
+            <p class="hero-tagline fade-in delay-2">Наращивание и продажа волос в Сочи</p>
+            <div class="hero-rating fade-in delay-3">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <span>5.0 &mdash; 40 оценок на 2ГИС</span>
+            </div>
+            <div class="hero-btns fade-in delay-4">
+                <a href="https://wa.me/79286670068" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Записаться
+                </a>
+                <a href="#services" class="btn btn-outline">
+                    Наши услуги
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services section" id="services">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Наши услуги</h2>
+                <p>Полный спектр услуг по наращиванию, уходу за волосами и созданию причёсок</p>
+            </div>
+            <div class="services-grid">
+                <!-- Category 1 -->
+                <div class="service-category fade-in delay-1">
+                    <div class="service-category-icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3>Наращивание волос</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-circle"></i> Горячее капсульное наращивание</li>
+                        <li><i class="fas fa-circle"></i> Коррекция наращивания</li>
+                        <li><i class="fas fa-circle"></i> Продажа волос (славянские, люкс)</li>
+                    </ul>
+                </div>
+                <!-- Category 2 -->
+                <div class="service-category fade-in delay-2">
+                    <div class="service-category-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Уходовые процедуры</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-circle"></i> Ботокс для волос</li>
+                        <li><i class="fas fa-circle"></i> Нанопластика</li>
+                    </ul>
+                </div>
+                <!-- Category 3 -->
+                <div class="service-category fade-in delay-3">
+                    <div class="service-category-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>Причёски</h3>
+                    <ul class="service-list">
+                        <li><i class="fas fa-circle"></i> Плетение кос</li>
+                        <li><i class="fas fa-circle"></i> Афрокосы, афролоконы</li>
+                        <li><i class="fas fa-circle"></i> Свадебные и вечерние причёски</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MASTERS ===== -->
+    <section class="masters section" id="masters">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Наши мастера</h2>
+                <p>Опытные специалисты, которые создают красоту каждый день</p>
+            </div>
+            <div class="masters-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1000px;">
+                <!-- Founder -->
+                <div class="master-card fade-in-left delay-1">
+                    <div class="master-avatar" style="background: linear-gradient(135deg, var(--gold), var(--gold-light)); box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="master-name">Ксения</h3>
+                    <p class="master-role">Основатель студии, мастер по наращиванию волос</p>
+                    <span class="master-badge" style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(232, 204, 110, 0.2)); color: var(--gold);">Основатель</span>
+                </div>
+                <!-- Master 1 -->
+                <div class="master-card fade-in delay-2">
+                    <div class="master-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="master-name">Оксана</h3>
+                    <p class="master-role">Мастер по наращиванию волос</p>
+                    <span class="master-badge">Главный мастер</span>
+                </div>
+                <!-- Master 2 -->
+                <div class="master-card fade-in-right delay-3">
+                    <div class="master-avatar" style="background: linear-gradient(135deg, var(--pink-deep), var(--rose)); box-shadow: 0 8px 25px rgba(196, 114, 144, 0.3);">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="master-name">Светлана</h3>
+                    <p class="master-role">Мастер по уходовым процедурам</p>
+                    <span class="master-badge">Специалист</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section class="gallery section" id="gallery">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Галерея работ</h2>
+                <p>Результаты наших работ говорят сами за себя</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item scale-in delay-1" data-index="0">
+                    <img src="photos/2a0000019b4163f3c805b8eef1d89c5b586e.jpg" alt="Работа Wish Hair Studio" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="1">
+                    <img src="photos/2a0000019865697e16d9df4f4040a1931f71.jpg" alt="Наращивание волос Сочи" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="2">
+                    <img src="photos/2a0000019a984f8468a7dd6a7e407468db90.jpg" alt="Результат наращивания волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="3">
+                    <img src="photos/2a000001986568513bc11e1e91185620de1b.jpg" alt="Капсульное наращивание" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-1" data-index="4">
+                    <img src="photos/2a00000197da4c00866dda3d04a138622e7f.jpg" alt="Свадебная причёска Сочи" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="5">
+                    <img src="photos/2a0000019947dcd9840e661d06bc67872315.jpg" alt="Уход за волосами" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="6">
+                    <img src="photos/2a00000199e392dc44c246a8d74f1dddf8a1.jpg" alt="Работа мастера по наращиванию" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="7">
+                    <img src="photos/2a0000019874b16fc3ce2a9e539e37a06ec6.jpg" alt="Студия наращивания волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox">
+        <div class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></div>
+        <div class="lightbox-nav lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></div>
+        <div class="lightbox-nav lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></div>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Просмотр фото">
+    </div>
+
+    <!-- ===== TRAINING ===== -->
+    <section class="training section" id="training">
+        <div class="container training-content">
+            <div class="section-header fade-in">
+                <h2>Обучение</h2>
+                <p>Станьте мастером по наращиванию волос под руководством опытных специалистов</p>
+            </div>
+            <div class="training-grid">
+                <div class="training-card fade-in delay-1">
+                    <div class="training-card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Обучение с нуля</h3>
+                    <p>Полный курс для начинающих мастеров по наращиванию волос. От теории до практики на моделях</p>
+                </div>
+                <div class="training-card fade-in delay-2">
+                    <div class="training-card-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Повышение квалификации</h3>
+                    <p>Курсы для действующих мастеров. Новые техники, работа со сложными случаями, секреты мастерства</p>
+                </div>
+                <div class="training-card fade-in delay-3">
+                    <div class="training-card-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Обучение капсулятора</h3>
+                    <p>Специализированный курс по капсуляции локонов. Освойте востребованный навык для дополнительного дохода</p>
+                </div>
+            </div>
+            <div class="training-cta fade-in">
+                <a href="https://wa.me/79286670068?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" class="btn btn-gold">
+                    <i class="fab fa-whatsapp"></i> Узнать подробности
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REVIEWS ===== -->
+    <section class="reviews section" id="reviews">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Отзывы</h2>
+                <p>Нам доверяют, потому что мы делаем свою работу с любовью</p>
+            </div>
+            <div class="reviews-highlight fade-in">
+                <div class="reviews-rating-big">5.0</div>
+                <div class="reviews-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="reviews-meta">
+                    40 оценок на <a href="https://2gis.ru/sochi/geo/70000001101381302" target="_blank" rel="noopener">2ГИС</a>
+                </p>
+            </div>
+            <div class="reviews-cards">
+                <div class="review-card fade-in delay-1">
+                    <div class="review-card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Наращивала волосы у Оксаны, результат просто потрясающий! Выглядят как свои, очень мягкие и шелковистые. Рекомендую всем!</p>
+                    <div class="review-card-author">Анастасия К.</div>
+                </div>
+                <div class="review-card fade-in delay-2">
+                    <div class="review-card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Делала ботокс для волос у Светланы. Волосы стали гладкими и блестящими, эффект держится уже второй месяц. Очень уютная студия!</p>
+                    <div class="review-card-author">Мария Д.</div>
+                </div>
+                <div class="review-card fade-in delay-3">
+                    <div class="review-card-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>Лучшая студия в Сочи! Качество волос отличное, мастера знают своё дело. Делала свадебную причёску  -- все гости были в восторге!</p>
+                    <div class="review-card-author">Елена В.</div>
+                </div>
+            </div>
+            <div class="reviews-link fade-in">
+                <a href="https://2gis.ru/sochi/geo/70000001101381302" target="_blank" rel="noopener" class="btn btn-primary">
+                    <i class="fas fa-external-link-alt"></i> Все отзывы на 2ГИС
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACTS ===== -->
+    <section class="contacts section" id="contacts">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Контакты</h2>
+                <p>Ждём вас в нашей студии в самом центре Сочи</p>
+            </div>
+            <div class="contacts-grid">
+                <div class="contacts-info fade-in-left">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>Адрес</h4>
+                            <p>ул. Туапсинская, 7, 2 этаж<br>Центральный район, Сочи, 354057</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>Телефон / WhatsApp</h4>
+                            <a href="tel:+79286670068">+7 (928) 667-00-68</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-item-text">
+                            <h4>Режим работы</h4>
+                            <p>Ежедневно 10:00 &ndash; 22:00, по записи</p>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div>
+                        <h4 style="font-family: 'Montserrat', sans-serif; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 14px; font-weight: 600;">Мы в соцсетях</h4>
+                        <div class="contacts-social">
+                            <a href="https://www.instagram.com/wish.hair.studio" target="_blank" rel="noopener" class="social-link instagram" aria-label="Instagram" title="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://t.me/wish_hair" target="_blank" rel="noopener" class="social-link telegram" aria-label="Telegram" title="Telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="https://vk.com/wish.hair.studio" target="_blank" rel="noopener" class="social-link vk" aria-label="ВКонтакте" title="ВКонтакте">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                            <a href="https://2gis.ru/sochi/geo/70000001101381302" target="_blank" rel="noopener" class="social-link twogis" aria-label="2ГИС" title="2ГИС">
+                                2ГИС
+                            </a>
+                            <a href="https://yandex.ru/maps/org/wish_hair_studio/206750947463" target="_blank" rel="noopener" class="social-link yandex" aria-label="Яндекс Карты" title="Яндекс Карты">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Amenities -->
+                    <div>
+                        <div class="contacts-amenities">
+                            <div class="amenity"><i class="fas fa-wifi"></i> Wi-Fi</div>
+                            <div class="amenity"><i class="fas fa-dog"></i> Можно с собакой</div>
+                            <div class="amenity"><i class="fas fa-credit-card"></i> Наличные / Карта / QR</div>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp CTA -->
+                    <a href="https://wa.me/79286670068" target="_blank" class="btn btn-primary" style="align-self: flex-start;">
+                        <i class="fab fa-whatsapp"></i> Написать в WhatsApp
+                    </a>
+                </div>
+
+                <!-- Map -->
+                <div class="contacts-map fade-in-right">
+                    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A85a8f0d8a7f17b0e5b87f5e5f5f5f5f5&amp;source=constructor&amp;ll=39.724831%2C43.590328&amp;z=16&amp;pt=39.724831%2C43.590328%2Cpm2rdm" width="100%" height="100%" frameborder="0" allowfullscreen loading="lazy" title="Wish Hair Studio на карте"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Wish <span>Hair</span> Studio</div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/wish.hair.studio" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/wish_hair" target="_blank" rel="noopener" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://vk.com/wish.hair.studio" target="_blank" rel="noopener" aria-label="ВКонтакте"><i class="fab fa-vk"></i></a>
+                    <a href="https://2gis.ru/sochi/geo/70000001101381302" target="_blank" rel="noopener" aria-label="2ГИС"><i class="fas fa-map-pin"></i></a>
+                    <a href="https://yandex.ru/maps/org/wish_hair_studio/206750947463" target="_blank" rel="noopener" aria-label="Яндекс Карты"><i class="fas fa-map-marked-alt"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2026 Wish Hair Studio. Все права защищены. Сочи, Россия.</p>
+                <div class="footer-cta">
+                    <a href="https://wa.me/79286670068" target="_blank" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Записаться
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== WHATSAPP FLOAT ===== -->
+    <a href="https://wa.me/79286670068" target="_blank" class="whatsapp-float" aria-label="Написать в WhatsApp" title="Написать в WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // === Navbar scroll effect ===
+        const navbar = document.getElementById('navbar');
+        let lastScroll = 0;
+
+        function handleNavbarScroll() {
+            const scrollY = window.scrollY;
+            if (scrollY > 80) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            lastScroll = scrollY;
+        }
+
+        window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+
+        // === Hamburger menu ===
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // === Scroll animations with IntersectionObserver ===
+        const animatedElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right, .scale-in');
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        animatedElements.forEach(el => observer.observe(el));
+
+        // === Gallery Lightbox ===
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img').src);
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            lightboxImg.src = galleryImages[currentImageIndex];
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showPrevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex];
+        }
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentImageIndex];
+        }
+
+        galleryItems.forEach((item) => {
+            item.addEventListener('click', () => {
+                const index = parseInt(item.getAttribute('data-index'));
+                openLightbox(index);
+            });
+        });
+
+        lightboxClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeLightbox();
+        });
+
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showPrevImage();
+        });
+
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showNextImage();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showPrevImage();
+            if (e.key === 'ArrowRight') showNextImage();
+        });
+
+        // === Smooth scroll for anchor links ===
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    const offset = navbar.offsetHeight;
+                    const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                        top: elementPosition - offset,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

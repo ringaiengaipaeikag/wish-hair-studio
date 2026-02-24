@@ -1,0 +1,17 @@
+{
+    "name": "Wish Hair Studio",
+    "short_name": "Wish Hair",
+    "description": "Наращивание и продажа волос в Сочи. Горячее капсульное наращивание, коррекция, уходовые процедуры, свадебные причёски.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#E8A0B4",
+    "lang": "ru",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23E8A0B4' width='100' height='100' rx='20'/><text x='50' y='68' font-size='50' text-anchor='middle' fill='white' font-family='serif' font-weight='bold'>W</text></svg>",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
