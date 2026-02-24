@@ -787,6 +787,19 @@
             transition: var(--transition);
         }
 
+        .gallery-item.hidden-item {
+            display: none;
+        }
+
+        .gallery-toggle {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+        .gallery-toggle .btn {
+            cursor: pointer;
+        }
+
         .gallery-item .gallery-zoom {
             position: absolute;
             top: 50%;
@@ -897,60 +910,118 @@
             right: 20px;
         }
 
-        /* ===== TRAINING ===== */
-        .training {
-            background: linear-gradient(135deg, #2D2D2D 0%, #1a1a2e 100%);
+        /* ===== ACADEMY ===== */
+        .academy {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             color: var(--white);
             position: relative;
             overflow: hidden;
+            padding: 100px 0;
         }
 
-        .training::before {
+        .academy::before {
             content: '';
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 30% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
-                radial-gradient(ellipse at 70% 50%, rgba(232, 160, 180, 0.06) 0%, transparent 60%);
+                radial-gradient(ellipse at 20% 30%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(232, 160, 180, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
         }
 
-        .training .section-header h2 {
+        .academy .section-header h2 {
             color: var(--white);
+            font-size: 2.5rem;
         }
 
-        .training .section-header p {
+        .academy .section-header p {
             color: rgba(255, 255, 255, 0.6);
         }
 
-        .training-content {
+        .academy-content {
             position: relative;
             z-index: 1;
         }
 
-        .training-grid {
+        .academy-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .academy-subtitle span {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .academy-formats {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .academy-format-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+        }
+
+        .academy-format-badge i {
+            color: var(--gold-light);
+        }
+
+        .academy-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
             margin-bottom: 50px;
         }
 
-        .training-card {
+        .academy-card {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: var(--radius);
-            padding: 36px 28px;
-            text-align: center;
+            padding: 40px 28px 36px;
             transition: var(--transition);
             backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
         }
 
-        .training-card:hover {
+        .academy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .academy-card:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-5px);
             border-color: rgba(212, 175, 55, 0.3);
         }
 
-        .training-card-icon {
+        .academy-card:hover::before {
+            opacity: 1;
+        }
+
+        .academy-card-icon {
             width: 70px;
             height: 70px;
             border-radius: 50%;
@@ -958,25 +1029,94 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 22px;
+            margin-bottom: 22px;
             font-size: 1.6rem;
             color: var(--gold-light);
         }
 
-        .training-card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 12px;
+        .academy-card-label {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .academy-card-label.beginner {
+            background: rgba(76, 175, 80, 0.15);
+            color: #81c784;
+        }
+
+        .academy-card-label.advanced {
+            background: rgba(255, 152, 0, 0.15);
+            color: #ffb74d;
+        }
+
+        .academy-card-label.special {
+            background: rgba(156, 39, 176, 0.15);
+            color: #ce93d8;
+        }
+
+        .academy-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 14px;
             color: var(--white);
         }
 
-        .training-card p {
-            font-size: 0.9rem;
+        .academy-card p {
+            font-size: 0.88rem;
             color: rgba(255, 255, 255, 0.6);
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 20px;
         }
 
-        .training-cta {
+        .academy-card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 24px 0;
+        }
+
+        .academy-card-features li {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .academy-card-features li i {
+            color: var(--gold-light);
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .academy-card-format {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 16px;
+            width: 100%;
+        }
+
+        .academy-card-format i {
+            color: var(--gold-light);
+        }
+
+        .academy-cta {
             text-align: center;
+        }
+
+        .academy-cta-text {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.88rem;
+            margin-top: 16px;
         }
 
         /* ===== REVIEWS ===== */
@@ -1338,10 +1478,15 @@
                 margin: 0 auto;
             }
 
-            .training-grid {
+            .academy-grid {
                 grid-template-columns: 1fr;
                 max-width: 500px;
                 margin: 0 auto 50px;
+            }
+
+            .academy-formats {
+                flex-direction: column;
+                align-items: center;
             }
 
             .reviews-cards {
@@ -1447,7 +1592,7 @@
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#masters">Мастера</a></li>
                 <li><a href="#gallery">Галерея</a></li>
-                <li><a href="#training">Обучение</a></li>
+                <li><a href="#training">Академия</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li><a href="https://wa.me/79286670068" target="_blank" class="btn btn-primary nav-cta">Записаться</a></li>
@@ -1465,7 +1610,7 @@
         <a href="#services" class="mobile-link">Услуги</a>
         <a href="#masters" class="mobile-link">Мастера</a>
         <a href="#gallery" class="mobile-link">Галерея</a>
-        <a href="#training" class="mobile-link">Обучение</a>
+        <a href="#training" class="mobile-link">Академия</a>
         <a href="#reviews" class="mobile-link">Отзывы</a>
         <a href="#contacts" class="mobile-link">Контакты</a>
         <a href="https://wa.me/79286670068" target="_blank" class="btn btn-primary" style="margin-top: 10px;">Записаться</a>
@@ -1524,8 +1669,12 @@
                     </div>
                     <h3>Наращивание волос</h3>
                     <ul class="service-list">
-                        <li><i class="fas fa-circle"></i> Горячее капсульное наращивание</li>
-                        <li><i class="fas fa-circle"></i> Коррекция наращивания</li>
+                        <li><i class="fas fa-circle"></i> Наращивание — <strong>40 ₽/прядь</strong></li>
+                        <li><i class="fas fa-circle"></i> Коррекция (снятие + перекапсуляция + наращивание) — <strong>55 ₽/прядь</strong></li>
+                        <li><i class="fas fa-circle"></i> Снятие — <strong>10–15 ₽/прядь</strong></li>
+                        <li><i class="fas fa-circle"></i> Капсуляция — <strong>15 ₽/прядь</strong></li>
+                        <li><i class="fas fa-circle"></i> Цветные пряди на капсулах — <strong>170 ₽/прядь</strong></li>
+                        <li><i class="fas fa-circle"></i> Наращивание в 4 руки — <strong>+2 000 ₽</strong></li>
                         <li><i class="fas fa-circle"></i> Продажа волос (славянские, люкс)</li>
                     </ul>
                 </div>
@@ -1545,10 +1694,12 @@
                     <div class="service-category-icon">
                         <i class="fas fa-crown"></i>
                     </div>
-                    <h3>Причёски</h3>
+                    <h3>Причёски и плетения</h3>
                     <ul class="service-list">
-                        <li><i class="fas fa-circle"></i> Плетение кос</li>
-                        <li><i class="fas fa-circle"></i> Афрокосы, афролоконы</li>
+                        <li><i class="fas fa-circle"></i> Локоны и другие причёски — <strong>от 2 000 ₽</strong></li>
+                        <li><i class="fas fa-circle"></i> Боксёрские косы — <strong>от 4 500 ₽</strong></li>
+                        <li><i class="fas fa-circle"></i> Водопад с локонами — <strong>от 8 000 ₽</strong></li>
+                        <li><i class="fas fa-circle"></i> Брейды на кудрявые волосы — <strong>от 8 000 ₽</strong></li>
                         <li><i class="fas fa-circle"></i> Свадебные и вечерние причёски</li>
                     </ul>
                 </div>
@@ -1594,26 +1745,158 @@
                 <p>Результаты наших работ говорят сами за себя</p>
             </div>
             <div class="gallery-grid">
+                <!-- Новые фото до/после из Instagram -->
                 <div class="gallery-item scale-in delay-1" data-index="0">
-                    <img src="photos/2a0000019b4163f3c805b8eef1d89c5b586e.jpg" alt="До и после — выпрямление и уход за волосами" loading="lazy">
+                    <img src="photos/work-02-blonde-face.jpg" alt="До и после — наращивание блонд, анфас" loading="lazy">
                     <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="gallery-item scale-in delay-2" data-index="1">
-                    <img src="photos/2a0000019a984f8468a7dd6a7e407468db90.jpg" alt="Платиновый блонд — результат наращивания" loading="lazy">
+                    <img src="photos/work-07-brunette-face.jpg" alt="До и после — наращивание, каре в длинные волосы" loading="lazy">
                     <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="gallery-item scale-in delay-3" data-index="2">
-                    <img src="photos/2a0000019947dcd9840e661d06bc67872315.jpg" alt="До и после — наращивание волос" loading="lazy">
+                    <img src="photos/work-05-blonde-face2.jpg" alt="До и после — наращивание блонд, каре в длинные" loading="lazy">
                     <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="gallery-item scale-in delay-4" data-index="3">
-                    <img src="photos/2a00000199e392dc44c246a8d74f1dddf8a1.jpg" alt="Процесс капсульного наращивания" loading="lazy">
+                    <img src="photos/work-06-bangs-face.jpg" alt="До и после — наращивание с чёлкой" loading="lazy">
                     <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
                 </div>
                 <div class="gallery-item scale-in delay-1" data-index="4">
+                    <img src="photos/work-01-blonde-back.jpg" alt="До и после — блонд, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="5">
+                    <img src="photos/work-03-ombre-back.jpg" alt="До и после — омбре блонд, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="6">
+                    <img src="photos/work-04-brown-back.jpg" alt="До и после — шатен, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="7">
+                    <img src="photos/work-08-brown-back2.jpg" alt="До и после — каре в длинные, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-1" data-index="8">
+                    <img src="photos/work-09-colored-strands.jpg" alt="Цветные пряди на капсулах" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <!-- Фото с 2ГИС -->
+                <div class="gallery-item scale-in delay-2" data-index="9">
+                    <img src="photos/2a0000019b4163f3c805b8eef1d89c5b586e.jpg" alt="До и после — выпрямление и уход за волосами" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="10">
+                    <img src="photos/2a0000019a984f8468a7dd6a7e407468db90.jpg" alt="Платиновый блонд — результат наращивания" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="11">
+                    <img src="photos/2a0000019947dcd9840e661d06bc67872315.jpg" alt="До и после — наращивание волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-1" data-index="12">
+                    <img src="photos/2a00000199e392dc44c246a8d74f1dddf8a1.jpg" alt="Процесс капсульного наращивания" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="13">
                     <img src="photos/2a0000019874b16fc3ce2a9e539e37a06ec6.jpg" alt="Подбор волос для наращивания" loading="lazy">
                     <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
                 </div>
+                <div class="gallery-item scale-in delay-3" data-index="14">
+                    <img src="photos/gallery-02.jpg" alt="Результат наращивания волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="15">
+                    <img src="photos/gallery-03.jpg" alt="Наращивание волос — работа мастера" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-1" data-index="16">
+                    <img src="photos/gallery-04.jpg" alt="Результат капсульного наращивания" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="17">
+                    <img src="photos/gallery-05.jpg" alt="До и после — преображение волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="18">
+                    <img src="photos/gallery-06.jpg" alt="Объёмное наращивание волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="19">
+                    <img src="photos/gallery-07.jpg" alt="Работа мастера — наращивание" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <!-- Новые фото из Instagram -->
+                <div class="gallery-item scale-in delay-1" data-index="20">
+                    <img src="photos/insta-01-blonde-back.jpg" alt="До и после — блонд, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="21">
+                    <img src="photos/insta-02-blonde-face.jpg" alt="До и после — блонд, анфас" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="22">
+                    <img src="photos/insta-03-platinum-back.jpg" alt="До и после — платиновый блонд, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="23">
+                    <img src="photos/insta-04-brunette-back.jpg" alt="До и после — шатен, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-1" data-index="24">
+                    <img src="photos/insta-05-blonde-bob-face.jpg" alt="До и после — каре в длинные, блонд" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="25">
+                    <img src="photos/insta-06-bangs-face.jpg" alt="До и после — наращивание с чёлкой" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="26">
+                    <img src="photos/insta-07-brunette-bob-face.jpg" alt="До и после — каре в длинные, шатен" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="27">
+                    <img src="photos/insta-08-brunette-bob-back.jpg" alt="До и после — каре в длинные, вид сзади" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-1" data-index="28">
+                    <img src="photos/insta-09-colored-strands.jpg" alt="Цветные пряди на капсулах — розовый, лавандовый" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="29">
+                    <img src="photos/gallery-08.jpg" alt="Результат наращивания волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="30">
+                    <img src="photos/gallery-09.jpg" alt="Наращивание — работа мастера" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="31">
+                    <img src="photos/gallery-10.jpg" alt="До и после — наращивание волос" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-1" data-index="32">
+                    <img src="photos/gallery-11.jpg" alt="Результат работы мастера" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-2" data-index="33">
+                    <img src="photos/gallery-12.jpg" alt="До и после — преображение" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-3" data-index="34">
+                    <img src="photos/gallery-13.jpg" alt="Капсульное наращивание — результат" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item scale-in delay-4" data-index="35">
+                    <img src="photos/gallery-14.jpg" alt="Наращивание волос — финальный результат" loading="lazy">
+                    <div class="gallery-zoom"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+            <div class="gallery-toggle">
+                <button class="btn btn-outline" id="galleryToggle" onclick="toggleGallery()">
+                    <i class="fas fa-chevron-down"></i> Показать ещё
+                </button>
             </div>
         </div>
     </section>
@@ -1626,40 +1909,132 @@
         <img class="lightbox-img" id="lightboxImg" src="" alt="Просмотр фото">
     </div>
 
-    <!-- ===== TRAINING ===== -->
-    <section class="training section" id="training">
-        <div class="container training-content">
+    <!-- ===== ACADEMY ===== -->
+    <section class="academy section" id="training">
+        <div class="container academy-content">
             <div class="section-header fade-in">
-                <h2>Обучение</h2>
-                <p>Станьте мастером по наращиванию волос под руководством опытных специалистов</p>
+                <h2>🎓 Академия WishHair</h2>
+                <p>Профессиональное обучение наращиванию волос в Сочи</p>
             </div>
-            <div class="training-grid">
-                <div class="training-card fade-in delay-1">
-                    <div class="training-card-icon">
+
+            <div class="academy-intro fade-in" style="max-width: 800px; margin: 0 auto 50px; text-align: center;">
+                <p style="font-size: 1.15rem; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 20px;">
+                    <strong>Ксения</strong> — основатель Wish Hair Studio, главный мастер и преподаватель с многолетним опытом.
+                    Обучает мастеров с нуля и помогает действующим специалистам выйти на новый уровень.
+                </p>
+                <p style="font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.7;">
+                    За время работы Академии десятки учениц начали самостоятельную практику и успешно работают по всей России.
+                    Обучение проходит на реальных моделях, все материалы предоставляются.
+                </p>
+            </div>
+
+            <div class="academy-formats fade-in">
+                <div class="academy-format-badge">
+                    <i class="fas fa-user"></i> Индивидуальное обучение
+                </div>
+                <div class="academy-format-badge">
+                    <i class="fas fa-users"></i> Групповое обучение (до 3 чел.)
+                </div>
+                <div class="academy-format-badge">
+                    <i class="fas fa-certificate"></i> Сертификат по окончании
+                </div>
+                <div class="academy-format-badge">
+                    <i class="fas fa-box-open"></i> Все материалы включены
+                </div>
+            </div>
+
+            <div class="academy-grid">
+                <div class="academy-card fade-in delay-1">
+                    <div class="academy-card-icon">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
+                    <span class="academy-card-label beginner">Для начинающих</span>
                     <h3>Обучение с нуля</h3>
-                    <p>Полный курс для начинающих мастеров по наращиванию волос. От теории до практики на моделях</p>
+                    <p>Полный курс для начинающих мастеров. Всё от теории до самостоятельной работы с клиентами</p>
+                    <ul class="academy-card-features">
+                        <li><i class="fas fa-check"></i> Теория наращивания волос</li>
+                        <li><i class="fas fa-check"></i> Подбор волос и капсуляция</li>
+                        <li><i class="fas fa-check"></i> Постановка руки на моделях</li>
+                        <li><i class="fas fa-check"></i> Техники горячего наращивания</li>
+                        <li><i class="fas fa-check"></i> Коррекция и снятие</li>
+                        <li><i class="fas fa-check"></i> Все материалы предоставляются</li>
+                        <li><i class="fas fa-check"></i> Сертификат по окончании</li>
+                    </ul>
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px;">
+                        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                            <span>Групповое (до 3 чел.)</span> <strong style="color: var(--gold-light);">25 000 ₽</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                            <span>Индивидуально (3 дня)</span> <strong style="color: var(--gold-light);">30 000 ₽</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 6px 0;">
+                            <span>Индивидуально (1 день)</span> <strong style="color: var(--gold-light);">20 000 ₽</strong>
+                        </div>
+                    </div>
+                    <div class="academy-card-format">
+                        <i class="fas fa-clock"></i> Индивидуально или в группе до 3 человек
+                    </div>
                 </div>
-                <div class="training-card fade-in delay-2">
-                    <div class="training-card-icon">
+
+                <div class="academy-card fade-in delay-2">
+                    <div class="academy-card-icon">
                         <i class="fas fa-award"></i>
                     </div>
+                    <span class="academy-card-label advanced">Для мастеров</span>
                     <h3>Повышение квалификации</h3>
-                    <p>Курсы для действующих мастеров. Новые техники, работа со сложными случаями, секреты мастерства</p>
+                    <p>Курс для действующих мастеров — новые техники, работа со сложными случаями, секреты скорости и качества</p>
+                    <ul class="academy-card-features">
+                        <li><i class="fas fa-check"></i> Сложные зоны наращивания</li>
+                        <li><i class="fas fa-check"></i> Работа с тонкими волосами</li>
+                        <li><i class="fas fa-check"></i> Ускорение работы без потери качества</li>
+                        <li><i class="fas fa-check"></i> Разбор ошибок и нюансов</li>
+                        <li><i class="fas fa-check"></i> Все материалы предоставляются</li>
+                        <li><i class="fas fa-check"></i> Сертификат по окончании</li>
+                    </ul>
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px;">
+                        <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                            <span>МК «Трендовые локоны» (3 ч.)</span> <strong style="color: var(--gold-light);">5 000 ₽</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; padding: 6px 0;">
+                            <span>Расширенный курс</span> <strong style="color: var(--gold-light);">по запросу</strong>
+                        </div>
+                    </div>
+                    <div class="academy-card-format">
+                        <i class="fas fa-clock"></i> Индивидуально или в группе
+                    </div>
                 </div>
-                <div class="training-card fade-in delay-3">
-                    <div class="training-card-icon">
+
+                <div class="academy-card fade-in delay-3">
+                    <div class="academy-card-icon">
                         <i class="fas fa-flask"></i>
                     </div>
-                    <h3>Обучение капсулятора</h3>
-                    <p>Специализированный курс по капсуляции локонов. Освойте востребованный навык для дополнительного дохода</p>
+                    <span class="academy-card-label special">Специализация</span>
+                    <h3>Капсулятор как профессия</h3>
+                    <p>Специализированный курс по капсуляции локонов — востребованный навык для дополнительного дохода</p>
+                    <ul class="academy-card-features">
+                        <li><i class="fas fa-check"></i> Виды капсуляции</li>
+                        <li><i class="fas fa-check"></i> Работа с кератином</li>
+                        <li><i class="fas fa-check"></i> Формирование идеальной капсулы</li>
+                        <li><i class="fas fa-check"></i> Теория + практика</li>
+                        <li><i class="fas fa-check"></i> Все материалы предоставляются</li>
+                        <li><i class="fas fa-check"></i> Сертификат по окончании</li>
+                    </ul>
+                    <div style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 16px;">
+                        <div style="display: flex; justify-content: space-between; padding: 6px 0;">
+                            <span>1 день (теория + практика)</span> <strong style="color: var(--gold-light);">15 000 ₽</strong>
+                        </div>
+                    </div>
+                    <div class="academy-card-format">
+                        <i class="fas fa-clock"></i> Индивидуальное обучение
+                    </div>
                 </div>
             </div>
-            <div class="training-cta fade-in">
-                <a href="https://wa.me/79286670068?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5" target="_blank" class="btn btn-gold">
-                    <i class="fab fa-whatsapp"></i> Узнать подробности
+
+            <div class="academy-cta fade-in">
+                <a href="https://wa.me/79286670068?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82%20%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B2%20%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%B8%20WishHair" target="_blank" class="btn btn-gold">
+                    <i class="fab fa-whatsapp"></i> Записаться на обучение
                 </a>
+                <p class="academy-cta-text">Консультация по формату и стоимости — бесплатно</p>
             </div>
         </div>
     </section>
@@ -1681,47 +2056,59 @@
                     <i class="fas fa-star"></i>
                 </div>
                 <p class="reviews-meta">
-                    40 оценок на <a href="https://2gis.ru/sochi/geo/70000001101381302" target="_blank" rel="noopener">2ГИС</a>
+                    40 оценок на <a href="https://2gis.ru/sochi/geo/70000001101381302" target="_blank" rel="noopener">2ГИС</a> · Отзывы на <a href="https://yandex.ru/maps/org/wish_hair_studio/206750947463" target="_blank" rel="noopener">Яндекс Картах</a>
                 </p>
             </div>
             <div class="reviews-cards">
                 <div class="review-card fade-in delay-1">
                     <div class="review-card-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>Наращивала волосы у Оксаны, результат просто потрясающий! Выглядят как свои, очень мягкие и шелковистые. Рекомендую всем!</p>
-                    <div class="review-card-author">Анастасия К.</div>
+                    <p>Настоящие профессионалы! Ксения — мастер своего дела. Капсулы абсолютно незаметны, волосы держатся надёжно. Результат превзошёл все ожидания!</p>
+                    <div class="review-card-author">Кристина К. <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);">— 2ГИС, июнь 2025</span></div>
                 </div>
                 <div class="review-card fade-in delay-2">
                     <div class="review-card-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>Делала ботокс для волос у Светланы. Волосы стали гладкими и блестящими, эффект держится уже второй месяц. Очень уютная студия!</p>
-                    <div class="review-card-author">Мария Д.</div>
+                    <p>Профессиональная работа мастера! Капсулы сделаны нужного размера по запросу, волосы распределены персонально. Очень довольна результатом.</p>
+                    <div class="review-card-author">Екатерина С. <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);">— 2ГИС, июнь 2025</span></div>
                 </div>
                 <div class="review-card fade-in delay-3">
                     <div class="review-card-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p>Лучшая студия в Сочи! Качество волос отличное, мастера знают своё дело. Делала свадебную причёску  -- все гости были в восторге!</p>
-                    <div class="review-card-author">Елена В.</div>
+                    <p>Качественное наращивание! Тщательный подбор волос — подобрали идеально по структуре и тону. Выглядят как свои, очень натурально.</p>
+                    <div class="review-card-author">Полина Р. <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);">— 2ГИС, июнь 2025</span></div>
+                </div>
+                <div class="review-card fade-in delay-4">
+                    <div class="review-card-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>Купил жене подарочный сертификат на наращивание. Проконсультировали по телефону, всё рассказали. Жена в полном восторге от результата!</p>
+                    <div class="review-card-author">Максим Е. <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);">— 2ГИС, май 2025</span></div>
+                </div>
+                <div class="review-card fade-in delay-1">
+                    <div class="review-card-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>Снятие и новое наращивание — всё на высшем уровне! Лёгкие капсулы, профессиональный подбор волос. Хожу уже не первый раз — всегда довольна.</p>
+                    <div class="review-card-author">Анастасия А. <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);">— 2ГИС, июнь 2025</span></div>
+                </div>
+                <div class="review-card fade-in delay-2">
+                    <div class="review-card-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>Покупала пряди в подарок — цвет и граммовка подобраны идеально. Очень приятный сервис, ответили на все вопросы. Рекомендую!</p>
+                    <div class="review-card-author">Юлия А. <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);">— 2ГИС, июнь 2025</span></div>
                 </div>
             </div>
-            <div class="reviews-link fade-in">
+            <div class="reviews-link fade-in" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                 <a href="https://2gis.ru/sochi/geo/70000001101381302" target="_blank" rel="noopener" class="btn btn-primary">
-                    <i class="fas fa-external-link-alt"></i> Все отзывы на 2ГИС
+                    <i class="fas fa-external-link-alt"></i> Отзывы на 2ГИС
+                </a>
+                <a href="https://yandex.ru/maps/org/wish_hair_studio/206750947463" target="_blank" rel="noopener" class="btn btn-gold">
+                    <i class="fas fa-external-link-alt"></i> Отзывы на Яндекс Картах
                 </a>
             </div>
         </div>
