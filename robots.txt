@@ -1,39 +1,9 @@
+# ВРЕМЕННО: индексация закрыта, пока сайт на GitHub Pages домене
+# Когда переедем на рабочий домен wish-hair-studio.ru — раскомментировать Allow и убрать Disallow
+
 User-agent: *
-Allow: /
-Disallow: /*.json$
+Disallow: /
 
-Sitemap: https://wish-hair-studio.ru/sitemap.xml
-
-Host: https://wish-hair-studio.ru
-
-# Yandex
-User-agent: Yandex
-Allow: /
-Allow: /img/
-Allow: /photos/
-Disallow: /*.json$
-Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
-
-# Google
-User-agent: Googlebot
-Allow: /
-Allow: /img/
-Allow: /photos/
-
-# Googlebot-Image
-User-agent: Googlebot-Image
-Allow: /img/
-Allow: /photos/
-
-# Yandex Images
-User-agent: YandexImages
-Allow: /img/
-Allow: /photos/
-
-# Mail.ru
-User-agent: Mail.RU_Bot
-Allow: /
-
-# Rambler
-User-agent: StackRambler
-Allow: /
+# Sitemap пока отключен — включить после переезда на рабочий домен
+# Sitemap: https://wish-hair-studio.ru/sitemap.xml
+# Host: https://wish-hair-studio.ru
